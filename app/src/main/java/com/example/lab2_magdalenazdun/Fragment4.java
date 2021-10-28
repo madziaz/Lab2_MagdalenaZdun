@@ -3,6 +3,7 @@ package com.example.lab2_magdalenazdun;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.transition.TransitionInflater;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -26,6 +27,8 @@ public class Fragment4 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TransitionInflater inflater = TransitionInflater.from(requireContext());
+        setExitTransition(inflater.inflateTransition(R.transition.fade));
     }
 
     @Override

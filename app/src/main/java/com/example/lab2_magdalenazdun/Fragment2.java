@@ -3,6 +3,7 @@ package com.example.lab2_magdalenazdun;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.transition.TransitionInflater;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,6 +24,8 @@ public class Fragment2 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TransitionInflater inflater = TransitionInflater.from(requireContext());
+        setExitTransition(inflater.inflateTransition(R.transition.fade));
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
